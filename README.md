@@ -1,5 +1,5 @@
 # IoT Automated Pill Dispenser (Embedded C / RP2040)
-![Hardware Setup](pill_dispenser_setup.jpg)
+![Hardware Setup](pill_dispenser_setup.jpeg)
 ##  Project Context
 Developed an automated medication dispensing system using the **Raspberry Pi Pico (RP2040)**. The device ensures patient safety by precisely timing dosages, confirming dispensing via sensors, and logging status to a remote server.
 
