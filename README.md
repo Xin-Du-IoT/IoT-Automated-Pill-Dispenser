@@ -1,20 +1,18 @@
-# IoT Automated Pill Dispenser (Embedded C / RP2040)
-![Hardware Setup](pill_dispenser_setup.jpeg)
-##  Project Context
-Developed an automated medication dispensing system using the **Raspberry Pi Pico (RP2040)**. The device ensures patient safety by precisely timing dosages, confirming dispensing via sensors, and logging status to a remote server.
+# IoT Automated Pill Dispenser (RP2040 & LoRaWAN)
 
-##  Advanced Engineering Features
-  **Finite State Machine (FSM)**: Designed a robust state-driven logic to manage calibration, dispensing, and error recovery.
-  **Sensor Integration & Logic**:
-    * **Photoelectric (Opto-fork)**: Implemented automatic homing sequence.
-    * **Piezoelectric**: Developed a real-time signal processing logic to detect pill drops (falling edge detection).
-  **System Reliability**: 
-    * **EEPROM Persistence**: Utilized I2C EEPROM to store pill counts and device states, ensuring continuity across power cycles.
-    * **Watchdog Integration**: Optimized LoRaWAN join sequences to prevent timing conflicts with the hardware watchdog.
-   **IoT Connectivity**: Implemented **LoRaWAN (OTAA)** using AT commands over UART. The device reports status changes (boot, dispensed, empty, power-off during turn).
+##  Project Overview
+A mission-critical medical IoT device developed using **C** on the **Raspberry Pi Pico**. This system automates daily medication dispensing, ensuring patient adherence through integrated sensors and long-range cloud reporting.
+
+![Hardware Setup](pill_dispenser_setup.jpeg)
+
+##  Key Technical Implementations
+* **System Reliability**: Built a **Finite State Machine (FSM)** to manage complex logic (Calibration -> Wait -> Dispense -> Log).
+* **Hardware Drivers**: Developed low-level drivers for **28BYJ-48 stepper motors** and handled real-time signal processing for **piezoelectric sensors** (pill drop detection).
+* **Data Persistence**: Integrated **I2C EEPROM** to store device states (pills left, logs), ensuring the device recovers accurately after power loss.
+* **IoT Connectivity**: Implemented **LoRaWAN (OTAA)** communication to report status changes (boot, successful dispense, error alerts) to a remote server.
 
 ##  Hardware Stack
-* RP2040 Microcontroller
-* 28BYJ-48 Stepper Motor & Driver
-* LoRa-E5 Module
-* Piezoelectric and Optical sensors
+* **Microcontroller**: Raspberry Pi Pico (RP2040)
+* **Connectivity**: LoRa-E5 module
+* **Sensors**: Optical (Homing), Piezo (Detection)
+* **Memory**: I2C EEPROM
